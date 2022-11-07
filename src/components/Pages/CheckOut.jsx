@@ -26,7 +26,7 @@ const CheckOut = () => {
             message
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://genius-car-server-module-66.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

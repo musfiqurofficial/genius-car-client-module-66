@@ -26,10 +26,10 @@ const LoginForm = () => {
                 }
                 console.log(currentUser);
 
-                //http://localhost:5000
-                //http://localhost:5000
+                //https://genius-car-server-module-66.vercel.app//
+                //https://genius-car-server-module-66.vercel.app
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://genius-car-server-module-66.vercel.app/jwt', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

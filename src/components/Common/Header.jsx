@@ -11,7 +11,7 @@ const Header = () => {
     const [orders, serOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://genius-car-server-module-66.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => serOrders(data))
     }, [user?.email])

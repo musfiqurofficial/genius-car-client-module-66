@@ -19,12 +19,12 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://genius-car-server-module-66.vercel.app/services')
             },
             {
                 path: '/home',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://genius-car-server-module-66.vercel.app/services')
             },
             {
                 path: '/about',
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             {
                 path: '/checkOut/:id',
                 element: <PrivateRoute><CheckOut /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://genius-car-server-module-66.vercel.app/services/${params.id}`)
             },
             {
                 path: '/orders',

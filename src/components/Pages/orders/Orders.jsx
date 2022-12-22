@@ -6,7 +6,7 @@ import Order from './Order';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Orders = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [orders, serOrders] = useState([]);
 
     const handleStatusUpdate = id => {
@@ -54,9 +54,14 @@ const Orders = () => {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut()
+                }
+                return res.json()
+            })
             .then(data => serOrders(data))
-    }, [user?.email])
+    }, [user?.email, logOut])
     return (
         <div>
             <div className="antialiased font-sans bg-gray-200">
